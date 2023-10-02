@@ -1,0 +1,170 @@
+Summary: Design and implement a Library Management System in Java
+
+Task 1: List all the entities/objects associated with a library. (HINT: Think in terms of any physical object/noun that serves some purpose in the library or outside of it)
+
+Task 2: List down all the actions/activities that are associated with the library. Also, try to describe each action in few words.
+
+Note: Don't try to be correct, just write everything.
+
+Task 1
+Books
+Chairs
+Librarian
+Entry Register
+Table Light
+Almirah
+Computer
+
+Task 2
+Books - For reading purpose
+Chairs- sitting
+Librarian- Will provide books
+Entry Register- Record maintaince
+Table Light- In night time
+Almirah- Books
+Computer- Books maintenance
+
+Iteration 2
+Task 1
+Library card for existing reader
+Registration for new reader
+Books
+Table and Chairs
+Librarian
+Reader
+Time Entry Register
+Table Light
+Almirah
+Computer
+
+Task 2
+Library card - Check whether the reader is new or registered and also check for the expiry date.
+Registration for new reader - If reader is new then do the registration first.
+Books - For reading purpose
+Table and Chairs- sitting
+Librarian- Will provide books
+Entry Register- Record the entry and exit time of the readers
+Table Light- In night time
+Almirah- Keep the Books
+Computer- Books record will be maintained(check whether the requested book is avl or not , if yes then in which section/almirah)
+
+Since we have identified the entities in the system, we will now assign attributes to each of the entities. An attribute can be any property from a set of properties for an entity/class, which can be used to construct the entity in a given system. Also, you may not need all the properties of an entity for a given system.
+
+Task 3:
+Write all the possible attributes for following entities :
+Library card
+Book
+Table
+Chair
+Librarian
+Reader
+Register
+Table Light
+Almirah
+Computer
+Library
+
+Example: Table: {id, capacity, material etc. }
+
+Task 3:-
+
+Library card : {Library Name,Address,Card ID, Name of reader,reader contact no,Date of registration,Expiry date, address of reader, signature of both reader and issued by}
+Book : {Book Name, Author name,About author,contents/chapters,no. of pages}
+Table : {material(plastic,iron,wooden),color,capacity,table no,dror,boxes or partitions}
+Chair : {material(plastic,iron,wooden),color,chair no.}
+Librarian : {name,age,shift timing,gender,librarian card}
+Reader : {name,age,shift timing,gender,contact no}
+Register : {reader name,entry and exit time,issued book name,assigned table no.,contact no of reader, signature of reader}
+Table Light : {issued to which table no,check if it is working after submitting it back,chargable or works through electricity only}
+Almirah : {material(plastic,iron,wooden),color,lock,handle}
+Computer : {data of books, books arrangement,data of readers,alert or notification to reader's registered mobile no that membership is about to end}
+Library : {library name,library opening and closing timing,books,readers,librarian,table ,chair,washroom,light,fan}
+
+Task3 -iteration 2
+Book : {name-String,
+authorName-String,aboutAuthor-List of String,index-list of strings,numberOfpages-int,
+bookID-isbn id}
+
+Table : {material(plastic,iron,wooden),
+color-string,
+capacity-int,
+tableId-int,
+hasDror-Boolean,
+hasBoxes-Boolean}
+
+Chair : {material(plastic,iron,wooden),
+color-string,
+chairId-int}
+
+Reader : {name-String,
+age-int,
+readerId-int,
+gender-string,
+contactNo-int}
+
+Register Entry : {reader name,
+entry and exit time,
+issued book name,
+assigned table no.,
+contact no of reader,
+signature of reader}
+
+Table Light : {issued to which table no,
+check if it is working after submitting it back-notes,
+chargable or works through electricity only-boolean}
+
+Almirah : {material(plastic,iron,wooden),
+color-string,
+lock-boolean,
+handle-boolean,
+capacity-int}
+
+Computer/lms : {data of books-int,
+books arrangement-list of string,
+data of readers-list of string,
+alert or notification to reader's registered mobile no that membership is about to end-Alert class}
+
+Library card : {cardId-int,
+libraryName-String,
+libraryAddress-List of String,
+readerName-String,
+contactNo-int,
+dateOfregistrationOfreader-date class,
+expiryDate-date class,
+issuedBy-String}
+
+Task 5 Use Cases
+Define and analise all the requirements and behaviour of this system.
+
+1.Reader Registration = If the reader is new then the librarian will do the registration and issue the library card to the reader.
+We can check if the reader is new or registered.
+Check for the validity of the library card.
+a.New Reader registration
+b.Issue library card
+c.Is reader registered
+d.Verify library card
+
+2.Search Book = Reader asks for a book to read then librarian will search the book in sections and assign it to the reader.
+Check if the book is assigned to the other reader.
+a.Search book
+b.Assign book
+    check if book is available
+c.Register Entry Time = After assigning the book ,the librarian will make an entry in the register.
+    a.Assign table
+
+3.Return Book = After reading the book , the reader will return it back to the librarian.
+Table and Chair will be available.
+a.Return book
+b.Register Exit Time = Librarian will make an entry, after the reader will submit the book back to the librarian.
+c.Free table
+
+Inventory management
+4.Book Order = Library will order the new books.
+a.Order a list of books
+
+5.Receive Books = After receiving the order book will unload from the vehicle.
+a.Verify order
+c.Register the new books in LMS system.
+    a.Book Arrangement = Add book coordinates in sections.
+
+
